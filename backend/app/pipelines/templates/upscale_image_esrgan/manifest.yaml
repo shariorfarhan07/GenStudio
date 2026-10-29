@@ -1,0 +1,19 @@
+id: upscale_image_esrgan
+task: upscale_image
+label: "Upscale Image (4× ESRGAN)"
+family: upscale
+description: "Upscale images 4× using Real-ESRGAN. Low VRAM."
+badges: ["Low VRAM"]
+requires: []
+params:
+  _asset_path:
+    node: "1"
+    input: image
+    type: image
+outputs:
+  - node: "3"
+    kind: image
+tiers:
+  "4x":
+    vram_gb: 2.0
+fallback: []

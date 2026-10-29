@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --scrollbar-width: 6px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f3f transparent;
+  }
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f3f;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #555; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded font-medium
+           text-sm transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-brand/40
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand hover:bg-brand-dark text-white;
+  }
+  .btn-secondary {
+    @apply btn bg-surface-3 hover:bg-surface-2 text-gray-200 border border-white/10;
+  }
+  .btn-danger {
+    @apply btn bg-danger/20 hover:bg-danger/30 text-danger border border-danger/30;
+  }
+  .card {
+    @apply bg-surface-1 border border-white/[0.08] rounded-lg;
+  }
+  .input {
+    @apply bg-surface-3 border border-white/10 rounded px-3 py-2 text-sm text-gray-100
+           focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand/50
+           placeholder:text-gray-500 w-full;
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-400 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+}

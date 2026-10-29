@@ -1,0 +1,221 @@
+# GenStudio model catalog (all URLs verified with HTTP HEAD).
+# Fields: label, repo, path (file in repo), filename (saved-as name), folder (under models/), size_bytes, license, pack, requires_token
+
+# -- starter pack --
+flux2_klein_4b_unet:
+  label: "FLUX.2 Klein 4B diffusion model"
+  repo: "Comfy-Org/Flux-2-Klein-4B"
+  path: "split_files/diffusion_models/flux-2-klein-4b.safetensors"
+  filename: "flux-2-klein-4b.safetensors"
+  folder: "diffusion_models"
+  size_bytes: 7751105712
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "FLUX.2 Klein 4B image editing model"
+
+qwen3_4b_te:
+  label: "Qwen3-4B Text Encoder"
+  repo: "Comfy-Org/Flux-2-Klein-4B"
+  path: "split_files/text_encoders/qwen_3_4b.safetensors"
+  filename: "qwen_3_4b.safetensors"
+  folder: "text_encoders"
+  size_bytes: 8044982048
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "Qwen3-4B text encoder, shared by FLUX.2 Klein 4B and Z-Image Turbo"
+
+flux2_vae:
+  label: "FLUX.2 VAE"
+  repo: "Comfy-Org/Flux-2-Klein-4B"
+  path: "split_files/vae/flux2-vae.safetensors"
+  filename: "flux2-vae.safetensors"
+  folder: "vae"
+  size_bytes: 336211292
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "FLUX.2 autoencoder (shared by Klein 4B and 9B)"
+
+zimage_turbo_unet:
+  label: "Z-Image Turbo diffusion model (bf16)"
+  repo: "Comfy-Org/Z-Image-Turbo"
+  path: "split_files/diffusion_models/z_image_turbo_bf16.safetensors"
+  filename: "z_image_turbo_bf16.safetensors"
+  folder: "diffusion_models"
+  size_bytes: 12309866400
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "Z-Image Turbo 8-step text-to-image model (bf16)"
+
+zimage_ae:
+  label: "Z-Image VAE (ae)"
+  repo: "Comfy-Org/Z-Image-Turbo"
+  path: "split_files/vae/ae.safetensors"
+  filename: "ae.safetensors"
+  folder: "vae"
+  size_bytes: 335304388
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "Autoencoder used by Z-Image Turbo"
+
+wan22_5b_unet:
+  label: "Wan 2.2 TI2V-5B"
+  repo: "Comfy-Org/Wan_2.2_ComfyUI_Repackaged"
+  path: "split_files/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors"
+  filename: "wan2.2_ti2v_5B_fp16.safetensors"
+  folder: "diffusion_models"
+  size_bytes: 9999658848
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "Wan 2.2 TI2V-5B image-to-video and text-to-video model"
+
+wan22_vae:
+  label: "Wan 2.2 VAE"
+  repo: "Comfy-Org/Wan_2.2_ComfyUI_Repackaged"
+  path: "split_files/vae/wan2.2_vae.safetensors"
+  filename: "wan2.2_vae.safetensors"
+  folder: "vae"
+  size_bytes: 1409400960
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "Wan 2.2 VAE (required by the TI2V-5B models)"
+
+umt5_fp8:
+  label: "UMT5-XXL Text Encoder (FP8 scaled)"
+  repo: "Comfy-Org/Wan_2.2_ComfyUI_Repackaged"
+  path: "split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+  filename: "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+  folder: "text_encoders"
+  size_bytes: 6735906897
+  license: "Apache-2.0"
+  pack: "starter"
+  requires_token: false
+  description: "UMT5-XXL text encoder for all Wan 2.x models"
+
+esrgan_ultrasharp:
+  label: "4x-UltraSharp Upscaler"
+  repo: "Kim2091/UltraSharp"
+  path: "4x-UltraSharp.pth"
+  filename: "4x-UltraSharp.pth"
+  folder: "upscale_models"
+  size_bytes: 66961958
+  license: "CC BY-NC-SA 4.0"
+  pack: "starter"
+  requires_token: false
+  description: "ESRGAN 4x upscaler"
+
+rife_49:
+  label: "RIFE 4.9 (frame interpolation)"
+  repo: "VMTamashii/rife49"
+  path: "rife49.pth"
+  filename: "rife49.pth"
+  folder: "rife"
+  size_bytes: 21345274
+  license: "MIT"
+  pack: "starter"
+  requires_token: false
+  description: "RIFE v4.9 frame interpolation. Note: ComfyUI-Frame-Interpolation normally auto-downloads its own checkpoints into its ckpts folder."
+
+# -- quality pack --
+flux2_klein_9b_unet:
+  label: "FLUX.2 Klein 9B diffusion model (FP8)"
+  repo: "black-forest-labs/FLUX.2-klein-9b-fp8"
+  path: "flux-2-klein-9b-fp8.safetensors"
+  filename: "flux-2-klein-9b-fp8.safetensors"
+  folder: "diffusion_models"
+  size_bytes: 9430000000
+  license: "BFL non-commercial"
+  pack: "quality"
+  requires_token: true
+  description: "FLUX.2 Klein 9B (FP8). Gated: requires HF token and accepting the license on Hugging Face. Size approximate."
+
+qwen3_8b_te:
+  label: "Qwen3-8B Text Encoder (FP8 mixed)"
+  repo: "Comfy-Org/Flux-2-Klein-9B"
+  path: "split_files/text_encoders/qwen_3_8b_fp8mixed.safetensors"
+  filename: "qwen_3_8b_fp8mixed.safetensors"
+  folder: "text_encoders"
+  size_bytes: 8664848742
+  license: "Apache-2.0"
+  pack: "quality"
+  requires_token: false
+  description: "Qwen3-8B text encoder for FLUX.2 Klein 9B"
+
+wan22_a14b_i2v_high:
+  label: "Wan 2.2 I2V A14B high-noise expert (GGUF Q4_K_M)"
+  repo: "QuantStack/Wan2.2-I2V-A14B-GGUF"
+  path: "HighNoise/Wan2.2-I2V-A14B-HighNoise-Q4_K_M.gguf"
+  filename: "Wan2.2-I2V-A14B-HighNoise-Q4_K_M.gguf"
+  folder: "diffusion_models"
+  size_bytes: 9651728896
+  license: "Apache-2.0"
+  pack: "quality"
+  requires_token: false
+  description: "Wan 2.2 A14B I2V high-noise expert, GGUF Q4_K_M"
+
+wan22_a14b_i2v_low:
+  label: "Wan 2.2 I2V A14B low-noise expert (GGUF Q4_K_M)"
+  repo: "QuantStack/Wan2.2-I2V-A14B-GGUF"
+  path: "LowNoise/Wan2.2-I2V-A14B-LowNoise-Q4_K_M.gguf"
+  filename: "Wan2.2-I2V-A14B-LowNoise-Q4_K_M.gguf"
+  folder: "diffusion_models"
+  size_bytes: 9651728896
+  license: "Apache-2.0"
+  pack: "quality"
+  requires_token: false
+  description: "Wan 2.2 A14B I2V low-noise expert, GGUF Q4_K_M"
+
+wan_vae:
+  label: "Wan 2.1 VAE"
+  repo: "Comfy-Org/Wan_2.2_ComfyUI_Repackaged"
+  path: "split_files/vae/wan_2.1_vae.safetensors"
+  filename: "wan_2.1_vae.safetensors"
+  folder: "vae"
+  size_bytes: 253815318
+  license: "Apache-2.0"
+  pack: "quality"
+  requires_token: false
+  description: "Wan 2.1 VAE (used by Wan 2.2 A14B)"
+
+lightx2v_i2v_high:
+  label: "LightX2V 4-step LoRA, Wan 2.2 I2V A14B high-noise"
+  repo: "lightx2v/Wan2.2-Distill-Loras"
+  path: "wan2.2_i2v_A14b_high_noise_lora_rank64_lightx2v_4step_1022.safetensors"
+  filename: "wan2.2_i2v_A14b_high_noise_lora_rank64_lightx2v_4step_1022.safetensors"
+  folder: "loras"
+  size_bytes: 634645944
+  license: "Apache-2.0"
+  pack: "quality"
+  requires_token: false
+  description: "Speed LoRA (4 steps) for the A14B high-noise expert"
+
+lightx2v_i2v_low:
+  label: "LightX2V 4-step LoRA, Wan 2.2 I2V A14B low-noise"
+  repo: "lightx2v/Wan2.2-Distill-Loras"
+  path: "wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors"
+  filename: "wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors"
+  folder: "loras"
+  size_bytes: 739472104
+  license: "Apache-2.0"
+  pack: "quality"
+  requires_token: false
+  description: "Speed LoRA (4 steps) for the A14B low-noise expert"
+
+# -- extra pack --
+esrgan_anime:
+  label: "RealESRGAN Anime 4x Upscaler"
+  repo: "ximso/RealESRGAN_x4plus_anime_6B"
+  path: "RealESRGAN_x4plus_anime_6B.pth"
+  filename: "RealESRGAN_x4plus_anime_6B.pth"
+  folder: "upscale_models"
+  size_bytes: 17938799
+  license: "BSD-3-Clause"
+  pack: "extra"
+  requires_token: false
+  description: "Real-ESRGAN 4x upscaler optimized for anime artwork"

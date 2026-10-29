@@ -1,0 +1,69 @@
+id: zimage_turbo_t2i
+task: text_to_image
+label: Z-Image Turbo (text→image)
+family: zimage_turbo
+description: Fast 8-step text-to-image with Z-Image Turbo. Shared weights with restyle.
+badges:
+- Fast
+- 8-step
+requires: []
+params:
+  prompt:
+    node: '6'
+    input: text
+    type: text
+    required: true
+    placeholder: Describe the image you want to create
+  width:
+    node: '5'
+    input: width
+    type: int
+    multiple_of: 16
+    default: 1024
+    min: 256
+    max: 2048
+  height:
+    node: '5'
+    input: height
+    type: int
+    multiple_of: 16
+    default: 1024
+    min: 256
+    max: 2048
+  steps:
+    node: '3'
+    input: steps
+    type: int
+    default: 8
+    min: 1
+    max: 20
+    advanced: true
+  cfg:
+    node: '3'
+    input: cfg
+    type: float
+    default: 1.0
+    min: 1.0
+    max: 10.0
+    advanced: true
+  seed:
+    node: '3'
+    input: seed
+    type: seed
+lora_points:
+- after: '1'
+  model_only: false
+outputs:
+- node: '9'
+  kind: image
+tiers:
+  1024p:
+    w: 1024
+    h: 1024
+    vram_gb: 9.0
+  512p:
+    w: 512
+    h: 512
+    vram_gb: 6.0
+fallback:
+- 512p

@@ -1,0 +1,38 @@
+id: interpolate_rife
+task: interpolate
+label: Frame Interpolation (RIFE ×2)
+family: rife
+description: Double the frame rate of a video using RIFE 4.9.
+badges:
+- Low VRAM
+requires: []
+params:
+  _asset_path:
+    node: '1'
+    input: video
+    type: video
+  multiplier:
+    node: '3'
+    input: multiplier
+    type: int
+    default: 2
+    min: 2
+    max: 4
+    advanced: true
+  fps:
+    node: '4'
+    input: frame_rate
+    type: int
+    default: 48
+    min: 8
+    max: 240
+    advanced: true
+    from_input: true
+    scale_by_multiplier: true
+outputs:
+- node: '4'
+  kind: video
+tiers:
+  2x:
+    vram_gb: 1.0
+fallback: []

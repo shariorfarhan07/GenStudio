@@ -1,0 +1,90 @@
+id: wan22_5b_t2v
+task: text_to_video
+label: Wan 2.2 5B T2V (text→video)
+family: wan22_5b
+description: Text-to-video with Wan 2.2 TI2V-5B. Apache-2.0. Up to 720p @24fps.
+badges:
+- Fast
+- Apache-2.0
+requires: []
+params:
+  prompt:
+    node: '6'
+    input: text
+    type: text
+    required: true
+    placeholder: Describe the video scene
+  negative:
+    node: '7'
+    input: text
+    type: text
+    advanced: true
+    default: low quality, blurry, distorted, watermark
+  width:
+    node: '5'
+    input: width
+    type: int
+    multiple_of: 16
+    default: 832
+    min: 256
+    max: 1280
+  height:
+    node: '5'
+    input: height
+    type: int
+    multiple_of: 16
+    default: 480
+    min: 144
+    max: 720
+  frames:
+    node: '5'
+    input: length
+    type: int
+    rule: 4n+1
+    default: 81
+    min: 17
+    max: 121
+  steps:
+    node: '3'
+    input: steps
+    type: int
+    default: 20
+    min: 5
+    max: 50
+    advanced: true
+  cfg:
+    node: '3'
+    input: cfg
+    type: float
+    default: 5.0
+    min: 1.0
+    max: 15.0
+    advanced: true
+  fps:
+    node: '26'
+    input: frame_rate
+    type: int
+    default: 24
+    min: 8
+    max: 30
+    advanced: true
+  seed:
+    node: '3'
+    input: seed
+    type: seed
+outputs:
+- node: '26'
+  kind: video
+tiers:
+  480p:
+    w: 832
+    h: 480
+    frames: 81
+    vram_gb: 9.0
+  720p:
+    w: 1280
+    h: 720
+    frames: 49
+    vram_gb: 11.0
+fallback:
+- 480p

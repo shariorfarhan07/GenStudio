@@ -1,0 +1,77 @@
+id: flux2_klein_4b_i2i
+task: image_to_image
+label: FLUX.2 Klein 4B (fast edit)
+family: flux2_klein_4b
+description: Fast 4-step image editing with FLUX.2 klein 4B. Apache-2.0 license.
+badges:
+- Fast
+- Apache-2.0
+requires: []
+params:
+  prompt:
+    node: '6'
+    input: text
+    type: text
+    required: true
+    placeholder: Describe the edit you want to make
+  image:
+    node: '11'
+    input: image
+    type: image
+  width:
+    nodes:
+    - '5'
+    - '14'
+    input: width
+    type: int
+    multiple_of: 16
+    default: 1024
+    min: 256
+    max: 2048
+  height:
+    nodes:
+    - '5'
+    - '14'
+    input: height
+    type: int
+    multiple_of: 16
+    default: 1024
+    min: 256
+    max: 2048
+  steps:
+    node: '14'
+    input: steps
+    type: int
+    default: 4
+    min: 1
+    max: 30
+    advanced: true
+  cfg:
+    node: '16'
+    input: cfg
+    type: float
+    default: 1.0
+    min: 1.0
+    max: 10.0
+    advanced: true
+  seed:
+    node: '3'
+    input: noise_seed
+    type: seed
+lora_points:
+- after: '1'
+  model_only: false
+outputs:
+- node: '9'
+  kind: image
+tiers:
+  1024p:
+    w: 1024
+    h: 1024
+    vram_gb: 9.0
+  512p:
+    w: 512
+    h: 512
+    vram_gb: 6.0
+fallback:
+- 512p

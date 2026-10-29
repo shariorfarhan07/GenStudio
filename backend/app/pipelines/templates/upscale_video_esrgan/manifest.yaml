@@ -1,0 +1,28 @@
+id: upscale_video_esrgan
+task: upscale_video
+label: Upscale Video (ESRGAN ×4)
+family: upscale
+params:
+  video:
+    node: '1'
+    input: video
+    type: video
+    required: true
+  fps:
+    node: '5'
+    input: frame_rate
+    type: int
+    default: 24
+    min: 8
+    max: 120
+    advanced: true
+    from_input: true
+outputs:
+- node: '5'
+  kind: video
+tiers:
+  default:
+    vram_gb: 2.0
+fallback:
+- default
+requires: []
